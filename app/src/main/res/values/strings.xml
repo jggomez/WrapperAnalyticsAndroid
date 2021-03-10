@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DSLAnalyticsFirebase</string>
+    <string name="lbl_event_1">Event Default Provider - Firebase</string>
+    <string name="lbl_event_2">Event Firebase Provider</string>
+    <string name="lbl_event_3">Event Mixpanel Provider</string>
+    <string name="lbl_event_4">Event All Providers</string>
+</resources>
