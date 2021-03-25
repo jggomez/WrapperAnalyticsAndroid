@@ -36,9 +36,6 @@ dependencies {
 
     implementation project(path: ':analytics')
 
-    // Mixpanel
-    implementation deps.mixpanel
-
     // Import the BoM for the Firebase platform
     implementation platform(deps.firebase.firebasebom)
     implementation deps.firebase.analytics
