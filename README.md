@@ -17,7 +17,6 @@ We need to have metrics or analytics in our application to better understand our
 You can [download](https://url) and install `Wrapper Analytics` with `Maven` and `Gradle`:
 
 ```gradle
-// In your module's `build.gradle.kts`
 dependencies {
     implementation("co.devhack.core:wrapperanalitycs:0.9")
 }
