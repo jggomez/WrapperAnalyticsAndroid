@@ -18,7 +18,7 @@ You can [download](https://url) and install `Wrapper Analytics` with `Maven` and
 
 ```gradle
 dependencies {
-    implementation("co.devhack.core:wrapperanalitycs:0.9")
+    implementation("co.devhack:analytics:0.9")
 }
 ```
 
