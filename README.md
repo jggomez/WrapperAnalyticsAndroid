@@ -23,7 +23,7 @@ dependencies {
 }
 ```
 
-Make sure to include `maven()` in your repositories
+Make sure to include `MavenCentral` in your repositories
 ```gradle
 repositories {
   mavenCentral()
