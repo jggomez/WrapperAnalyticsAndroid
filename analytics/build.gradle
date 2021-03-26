@@ -4,6 +4,14 @@ plugins {
 
 }
 
+ext {
+    PUBLISH_GROUP_ID = lib.artifactGroup
+    PUBLISH_VERSION = lib.artifactVersionName
+    PUBLISH_ARTIFACT_ID = 'analytics'
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-mavencentral.gradle"
+
 android {
     compileSdkVersion versions.compileSdk
     buildToolsVersion versions.androidTools
