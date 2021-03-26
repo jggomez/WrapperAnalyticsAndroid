@@ -3,7 +3,8 @@
 > The simplest library to record analytical events in an Android application.
 
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.4.30-blueviolet.svg)](https://kotlinlang.org)
-![Minimum SDK Version](https://img.shields.io/badge/minSdkVersion-14-brightgreen.svg)
+![Minimum SDK Version](https://img.shields.io/badge/minSdkVersion-23-brightgreen.svg)
+![GitHub release](https://img.shields.io/github/v/release/jggomez/WrapperAnalyticsAndroid)
 
 "What cannot be measured cannot be improved" by William Thomson Kelvin
 
@@ -18,14 +19,14 @@ You can [download](https://url) and install `Wrapper Analytics` with `Maven` and
 
 ```gradle
 dependencies {
-    implementation("co.devhack:analytics:0.9")
+    implementation("co.devhack:analytics:0.9.2")
 }
 ```
 
 Make sure to include `maven()` in your repositories
 ```gradle
 repositories {
-  maven()
+  mavenCentral()
 }
 ```
 
