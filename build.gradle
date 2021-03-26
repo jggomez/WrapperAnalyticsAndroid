@@ -3,7 +3,7 @@ buildscript {
 
     ext.lib = [
             'artifactGroup'      : 'co.devhack',
-            'artifactVersionName': '0.9.1',
+            'artifactVersionName': '0.9.2',
     ]
 
     ext.versions = [
