@@ -2,7 +2,7 @@
 
 > The simplest library to record analytical events in an Android application.
 
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.6.10-blueviolet.svg)](https://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/Kotlin-1.6.0-blueviolet.svg)](https://kotlinlang.org)
 ![Minimum SDK Version](https://img.shields.io/badge/minSdkVersion-23-brightgreen.svg)
 ![GitHub release](https://img.shields.io/github/v/release/jggomez/WrapperAnalyticsAndroid)
 
