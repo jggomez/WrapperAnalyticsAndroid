@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="co.devhack.dslanalyticsfirebase">
 
     <application
@@ -9,7 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DSLAnalyticsFirebase">
-        <activity android:name="co.devhack.dslanalyticsfirebase.MainActivity">
+        <activity
+            android:name="co.devhack.dslanalyticsfirebase.MainActivity"
+            android:exported="true"
+            tools:ignore="Instantiatable">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,6 +24,12 @@
         <meta-data
             android:name="co.devhack.analytics.mixpanel.TOKEN"
             android:value="76723e3c62e3d4d45c030ae02c4fcdb3" />
+        <meta-data
+            android:name="ai.wordbox.remotelogging.enable"
+            android:value="true" />
+        <meta-data
+            android:name="ai.wordbox.remotelogging.logtypes"
+            android:value="INFO, ERROR" />
     </application>
 
 </manifest>

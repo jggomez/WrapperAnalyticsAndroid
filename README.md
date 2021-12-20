@@ -2,7 +2,7 @@
 
 > The simplest library to record analytical events in an Android application.
 
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.4.30-blueviolet.svg)](https://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/Kotlin-1.6.10-blueviolet.svg)](https://kotlinlang.org)
 ![Minimum SDK Version](https://img.shields.io/badge/minSdkVersion-23-brightgreen.svg)
 ![GitHub release](https://img.shields.io/github/v/release/jggomez/WrapperAnalyticsAndroid)
 
@@ -19,7 +19,7 @@ You can [download](https://url) and install `Wrapper Analytics` with `Maven` and
 
 ```gradle
 dependencies {
-    implementation("co.devhack:analytics:0.9.2")
+    implementation("co.devhack:analytics:1.0.1")
 }
 ```
 
@@ -95,6 +95,30 @@ And you can send the events to both.
           }
       }
   }.track()
+```
+
+Or you can send multiple events at the same time.
+
+```kotlin
+  createAnalytics {
+    createAnalytic {
+        provider = Provider.ALL
+        eventName = "Event1"
+        params {
+            param {
+                nameParam = "Param 1"
+                valueParam = 1
+            }
+            param {
+                nameParam = "Param 2"
+                valueParam = "value"
+            }
+        }
+    }
+    createAnalytic {
+        eventName = "Event2"
+    }
+}.track
 ```
 
 Made with ❤ by  [jggomez](https://devhack.co).

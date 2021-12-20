@@ -56,15 +56,12 @@ dependencies {
     // Log
     api deps.timber
 
-    // Import the BoM for the Firebase platform
-    implementation platform(deps.firebase.firebasebom)
     implementation deps.firebase.analytics
-    implementation deps.firebase.auth
 
     // Mixpanel
     implementation deps.mixpanel
 
     // DSL mandatory
-    api deps.dsl.dslLintAnnotations
+    implementation deps.dsl.dslLintAnnotations
     lintPublish deps.dsl.dslLintPublish
 }

@@ -38,7 +38,6 @@ data class AnalyticEvent(
     }
 }
 
-
 data class ParamEvent(
     val name: String,
     val value: Any

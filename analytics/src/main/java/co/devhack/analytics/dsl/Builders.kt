@@ -7,6 +7,23 @@ import com.ironsource.aura.dslint.annotations.DSLint
 
 @Analytics
 @DSLint
+class AnalyticsEventBuilder(
+    private val context: Context
+) : ArrayList<AnalyticEvent>() {
+
+    fun createAnalytic(block: AnalyticEventBuilder.() -> Unit) {
+        add(AnalyticEventBuilder(context).apply(block).build())
+    }
+
+    fun track() {
+        forEach { analyticEvent ->
+            analyticEvent.track()
+        }
+    }
+}
+
+@Analytics
+@DSLint
 class AnalyticEventBuilder(
     private val context: Context
 ) {
@@ -31,7 +48,6 @@ class AnalyticEventBuilder(
 
 @Analytics
 class ParamsEvent : ArrayList<ParamEvent>() {
-
     fun param(block: ParamBuilder.() -> Unit) {
         add(ParamBuilder().apply(block).build())
     }

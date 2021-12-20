@@ -13,7 +13,7 @@ enum class Provider {
 
 object FactoryAnalyticProvider {
 
-    private const val PACKAGE_NAME_TOKEN = "co.devhack.analytics.mixpanel.TOKEN"
+    private const val PACKAGE_NAME_TOKEN = "ai.wordbox.analytics.mixpanel.TOKEN"
     private const val MESSAGE_TOKEN_NOT_FOUND = "Mixpanel Token is not found"
 
     fun createInstance(

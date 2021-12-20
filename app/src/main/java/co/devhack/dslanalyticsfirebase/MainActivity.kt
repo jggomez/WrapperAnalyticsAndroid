@@ -1,25 +1,49 @@
 package co.devhack.dslanalyticsfirebase
 
+import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import co.devhack.analytics.dsl.createAnalytic
+import co.devhack.analytics.dsl.createAnalytics
 import co.devhack.analytics.providers.Provider
-import com.google.firebase.FirebaseApp
+import co.devhack.droidremotelogging.domain.DeviceDetails
+import co.devhack.droidremotelogging.logging.TimberRemoteLogging
 import com.google.firebase.analytics.FirebaseAnalytics
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        initAnalytics()
+        initTimber()
+        testRemoteLogging()
         addListeners()
     }
 
-    private fun initAnalytics() {
-        FirebaseApp.initializeApp(this)
+    @SuppressLint("HardwareIds")
+    private fun initTimber() {
+        val deviceDetails = DeviceDetails(
+            Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID),
+            Build.VERSION.RELEASE,
+            Build.MANUFACTURER,
+            Build.BRAND,
+            Build.DEVICE,
+            Build.MODEL,
+            BuildConfig.VERSION_NAME,
+            BuildConfig.VERSION_CODE
+        )
+        Timber.plant(TimberRemoteLogging(applicationContext, deviceDetails))
+        Timber.plant(Timber.DebugTree())
+    }
+
+    private fun testRemoteLogging() {
+        Timber.i("Testing Remote Logging")
+        Timber.e(Exception("Error Testing Remote Logging"))
     }
 
     private fun addListeners() {
@@ -115,17 +139,33 @@ class MainActivity : AppCompatActivity() {
 
     private fun createAnalyticAllProvider() {
         // provider All
-        createAnalytic {
-            provider = Provider.ALL
-            eventName = "Event ALL"
-            params {
-                param {
-                    nameParam = "Param 1 ALL"
-                    valueParam = 1
+        createAnalytics {
+            createAnalytic {
+                provider = Provider.ALL
+                eventName = "Event ALL"
+                params {
+                    param {
+                        nameParam = "Param 1 ALL"
+                        valueParam = 1
+                    }
+                    param {
+                        nameParam = "Param 2 ALL"
+                        valueParam = "valor"
+                    }
                 }
-                param {
-                    nameParam = "Param 2 ALL"
-                    valueParam = "valor"
+            }
+            createAnalytic {
+                provider = Provider.ALL
+                eventName = "Other"
+                params {
+                    param {
+                        nameParam = "Param 1 ALL"
+                        valueParam = 1
+                    }
+                    param {
+                        nameParam = "Param 2 ALL"
+                        valueParam = "valor"
+                    }
                 }
             }
         }.track()
